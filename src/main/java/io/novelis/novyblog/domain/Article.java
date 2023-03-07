@@ -21,7 +21,7 @@ public class Article {
     private String content;
     @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
     private Date publishDate;
-    @OneToMany(mappedBy = "article",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "article",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private Collection<Comment> comments;
     public Article(String title,String content,Date publishDate) {
         this.title=title;
